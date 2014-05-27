@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
+gem 'devise'
+gem 'rails_admin'
+gem 'cancan'
 
+gem 'piggybak'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
