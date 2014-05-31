@@ -37,7 +37,7 @@ RailsAdmin and Devise are both installed with the Piggybak installation.  I'm us
 
 ### Configure the Devise Mailer
 
-Devise uses a mailer as a part of the authentication process.  *default_url_options* needs to be set appropriately for the different environments.  I added the following line for my development environment in *config/environments/development.rb*:
+Devise uses a mailer as a part of the authentication process.  **default\_url\_options** needs to be set appropriately for the different environments.  I added the following line for my development environment in **config/environments/development.rb**:
 
 ```ruby
 config.action_mailer.default_url_options = { host: 'localhost:3000' }
@@ -49,11 +49,11 @@ config.action_mailer.default_url_options = { host: 'localhost:3000' }
 $ rails generate devise user
 ```
 
-Rails creates a user model and configures it with Devise modules. It also creates a migration file located in *db/migrate/devise_create_users.rb*.
+Rails creates a user model and configures it with Devise modules. It also creates a migration file located in **db/migrate/devise\_create\_users.rb**.
 
 ```
 $ rake db:migrate
-``
+```
 
 This tells rails to create a table called users.
 
@@ -61,15 +61,15 @@ This tells rails to create a table called users.
 
 By default, devise created the following pages:
 
-http://localhost:3000/users/sign_up
+[http://localhost:3000/users/sign_up](http://localhost:3000/users/sign_up)
 
-http://localhost:3000/users/sign_in
+[http://localhost:3000/users/sign_in](http://localhost:3000/users/sign_in)
 
 ### Add login links to the landing page
 
-I created a partial file *app/views/layouts/_login.html.erb* with following content:
+I created a partial file **app/views/layouts/\_login.html.erb** with following content:
 
-```html
+```erb
 <% if signed_in? %>
     Logged in as <%= current_user.email %>.
     <%= link_to "Logout", destroy_user_session_path, method: :delete %>
@@ -81,7 +81,7 @@ I created a partial file *app/views/layouts/_login.html.erb* with following cont
 
 To add it to my other views, I added the following to *app/views/layouts/application.html.erb*:
 
-```html
+```erb
 <%= render partial: 'layouts/login' %>
 ```
 
@@ -107,7 +107,7 @@ class AddRoleToUsers < ActiveRecord::Migration
  
         User.create! do |u|
             u.email     = 'cbynum@gmail.com'
-            u.password    = ‘admin123'
+            u.password    = 'admin123'
             u.role = 'administrator'
         end
     end
@@ -152,10 +152,9 @@ root 'home#index'
 
 I added the tags for flash messages to **app/views/layouts/application.html.erb**
 
-```html
+```html+erb
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
  ```
 
 ### Configure CanCan
-
