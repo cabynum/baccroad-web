@@ -140,10 +140,18 @@ class AddRoleToUsers < ActiveRecord::Migration
 end
 ```
 
-I excuted the migration to create an example *administrator* user with email *cbynum@gmail.com* and password *admin*.
+I excuted the migration to create an example **administrator** user with email **cbynum@gmail.com** and password **admin123**.
 
 ```
 $ rake db:migrate
+```
+
+To access this role, I added the following method to **app/models/user.rb**
+
+```ruby
+def role?(r)
+    role.include? r.to_s
+  end
 ```
 
 ### Add Devise Views
