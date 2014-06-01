@@ -1,6 +1,6 @@
 # README
 
-Here are the steps I used to configure the project.  Everything mentioned in this installation process has already been done/configured.  This text is purely to document the process.
+Here are the steps I used to configure the project.  Everything mentioned in this installation process has already been done/configured.  This text is purely to document the process...I'll probably just move it to a blogpost once I'm finished.
 
 ## Installation
 
@@ -56,6 +56,32 @@ $ rake db:migrate
 ```
 
 This tells rails to create a table called users.
+
+* install piggybak migrations
+```
+$ rake piggybak:install:migrations
+$ rake db:migrate
+```
+
+**\*\*WARNING:**   There may be an existing **add\_devise\_to\_users.rb** migration.  I deleted this as it looked like a duplicate to **devise\_create\_users.rb**
+
+**\*\*WARNING:**   I ran into an error where **piggybak\_line\_item** table does not exist.  I found the **add\_price\_to\_line\_item.rb** migration and added this bit of code...
+
+```ruby
+Piggybak::LineItem.class_eval do
+      self.table_name = 'line_items'
+    end
+```
+
+**\*\*WARNING:** There is a migration for a rearchitecture of the **line\_item**.  It's unclear to me why both the rearchitecture migration and original line_item migration are both in place, unless the creator is just unaware that the rearchitecture migration causes errors when it tries to recreate the **created\_at** and **updated\_at** columns in the table.  To get past this error I commented out the following in the **line\_item\_rearchitecture.piggybak.rb** file
+
+```ruby
+=begin
+    change_table(:line_items) do |t|
+      t.timestamps
+    end
+=end
+```
 
 ### Verify sign-up pages
 
@@ -128,14 +154,6 @@ Devise comes with some views OOTB that I can use for customization.  Here is the
 $ rails generate devise:views
 ```
 
-### Generate the Ability Class
-
-For authorization I'll be using cancan.  The permissions are driven through an Ability class that can be generated from the command line as follows:
-
-```
-$ rails generate cancan:ability
-```
-
 ### Create the Landing Page
 
 ```
@@ -158,3 +176,10 @@ I added the tags for flash messages to **app/views/layouts/application.html.erb*
  ```
 
 ### Configure CanCan
+
+For authorization I'll be using cancan.  The permissions are driven through an Ability class that can be generated from the command line as follows:
+
+```
+$ rails generate cancan:ability
+```
+
