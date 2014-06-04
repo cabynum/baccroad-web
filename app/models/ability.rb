@@ -28,5 +28,15 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/ryanb/cancan/wiki/Defining-Abilities
-  end
+
+    if user && user.role?(:administrator)
+      can :dashboard
+      can :access, :rails_admin
+      can :manage, [User]
+      can :manage, Piggybak.config.manage_classes.map(&:constantize)
+      Piggybak.config.extra_abilities.each do |extra_ability|
+        can extra_ability[:abilities], extra_ability[:class_name].constantize
+      end
+    end
+end
 end

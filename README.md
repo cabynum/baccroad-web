@@ -63,6 +63,15 @@ $ rake piggybak:install:migrations
 $ rake db:migrate
 ```
 
+Uncomment the following lines in **config/initializers/rails_admin.rb**
+
+```ruby
+config.authenticate_with do
+    warden.authenticate! scope: :user
+  end
+  config.current_user_method(&:current_user)
+```
+
 **\*\*WARNING:**   There may be an existing **add\_devise\_to\_users.rb** migration.  I deleted this as it looked like a duplicate to **devise\_create\_users.rb**
 
 **\*\*WARNING:**   I ran into an error where **piggybak\_line\_item** table does not exist.  I found the **add\_price\_to\_line\_item.rb** migration and added this bit of code...
@@ -185,9 +194,39 @@ I added the tags for flash messages to **app/views/layouts/application.html.erb*
 
 ### Configure CanCan
 
+At this point anyone should be able to access the administration portion of the site at
+
+[http://localhost:3000/users/sign_in](http://localhost:3000/admin)
+
+It's time to lockdown that portion of the website.
+
 For authorization I'll be using cancan.  The permissions are driven through an Ability class that can be generated from the command line as follows:
 
 ```
 $ rails generate cancan:ability
+```
+
+I had to edit the ability class at **app/models/ability.rb**
+
+```ruby
+def initialize(user)
+
+    if user && user.role?(:administrator)
+      can :dashboard
+      can :access, :rails_admin
+      can :manage, [User]
+      can :manage, Piggybak.config.manage_classes.map(&:constantize)
+      Piggybak.config.extra_abilities.each do |extra_ability|
+        can extra_ability[:abilities], extra_ability[:class_name].constantize
+      end
+    end
+```
+
+I also had to edit the rails_admin configuration at **config/initializers/rails_admin.rb** to tell my app to use cancan with rails_admin
+
+```ruby
+RailsAdmin.config do |config|
+  config.authorize_with :cancan
+end
 ```
 
