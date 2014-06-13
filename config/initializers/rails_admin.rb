@@ -16,6 +16,18 @@ RailsAdmin.config do |config|
 
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
 
+  config.model Product do
+    list do
+      field :name
+      field :description
+    end
+    edit do
+      field :name
+      field :description
+      field :piggybak_sellable
+    end
+  end
+
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory

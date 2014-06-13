@@ -196,11 +196,11 @@ I added the tags for flash messages to **app/views/layouts/application.html.erb*
 
 At this point anyone should be able to access the administration portion of the site at
 
-[http://localhost:3000/users/sign_in](http://localhost:3000/admin)
+[http://localhost:3000/admin](http://localhost:3000/admin)
 
-It's time to lockdown that portion of the website.
+At this point I locked down that portion of the website so that only site adminstrators can access it.
 
-For authorization I'll be using cancan.  The permissions are driven through an Ability class that can be generated from the command line as follows:
+For authorization I used the cancan gem.  The permissions are driven through an **ability class** that can be generated from the command line as follows:
 
 ```
 $ rails generate cancan:ability
@@ -222,7 +222,7 @@ def initialize(user)
     end
 ```
 
-I also had to edit the rails_admin configuration at **config/initializers/rails_admin.rb** to tell my app to use cancan with rails_admin
+I also had to edit the rails_admin configuration at **config/initializers/rails_admin.rb** to tell my app to use cancan with rails_admin.
 
 ```ruby
 RailsAdmin.config do |config|
@@ -230,3 +230,80 @@ RailsAdmin.config do |config|
 end
 ```
 
+### Integrating with Piggybak
+
+How to make use of the most basic of integration points with the piggybak gem (how to sell an item), is outlined pretty well in the [http://www.piggybak.org/documentation.html#integration](piggybak integration points documentation).
+
+**acts_as_orderer** and **acts_as_sellable** are the two most rudimentary integration points.  Our user model will act as the orderer, and I needed to create a product (or item) model to have something to sell.
+
+user model now looks like...
+
+```ruby
+class User < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+
+  acts_as_orderer
+        
+  def role?(r)
+    role.include? r.to_s
+  end
+end
+```
+
+then i generated a product model...
+
+```
+$ rails generate model product name:string description:text
+```
+
+after adding the piggybak integration, product looks like...
+
+```ruby
+class Product < ActiveRecord::Base
+    acts_as_sellable
+end
+```
+run db migrations to create the new products table
+
+```
+$ rake db:migrate
+```
+
+we'd like to be able to add and remove products from the rails_admin console, so I needed to update cancan's ability class with the proper permissions
+
+```ruby
+can :manage, [Product]
+```
+
+after restarting the server, you should now be able to see the Products model in the rails_admin console
+
+Now, to get the attributes that come with piggybak's sellable models there is no longer a need to add **attr_accessible :piggybak_sellable_attributes** to the model class.  This will no longer work for the mass copy of attributes in rails 4.  What's needed is to add the following to *rails_admin.rb*:
+
+```ruby
+config.model Product do
+    list do
+      field :name
+      field :description
+    end
+    edit do
+      field :name
+      field :description
+      field :piggybak_sellable
+    end
+  end
+```
+
+## Project Details
+
+### User Accounts
+
+username: admin@baccroad.com
+password: 'admin123'
+role: administrator
+
+username: customer@baccroad.com
+password: 'customer123'
+role: customer
