@@ -8,12 +8,11 @@
 </head>
 <body>
 
-	<%= render partial: 'layouts/login' %>
+<%= render partial: 'layouts/login' %>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 
-	<p class="notice"><%= notice %></p>
-	<p class="alert"><%= alert %></p>
-	
-	<%= yield %>
+<%= yield %>
 
 </body>
 </html>

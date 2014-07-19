@@ -286,15 +286,25 @@ Now, to get the attributes that come with piggybak's sellable models there is no
 config.model Product do
     list do
       field :name
-      field :description
+      field :piggybak_sellable
     end
     edit do
       field :name
-      field :description
       field :piggybak_sellable
     end
   end
 ```
+
+
+You actually have to mount piggybak.  This may be common sense to experienced rails developers, but it took me a few hours to figure out why the tags like 'add_cart' weren't working.  Add the following ot *routes.rb*
+
+```ruby
+mount Piggybak::Engine => '/checkout', :as => 'piggybak'
+```
+
+## TODO
+
+* Add variant support
 
 ## Project Details
 

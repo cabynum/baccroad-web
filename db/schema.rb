@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140608184445) do
+ActiveRecord::Schema.define(version: 20140615194747) do
 
   create_table "adjustments", force: true do |t|
     t.string   "source_type"
@@ -155,7 +155,6 @@ ActiveRecord::Schema.define(version: 20140608184445) do
 
   create_table "products", force: true do |t|
     t.string   "name"
-    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

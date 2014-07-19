@@ -4,6 +4,7 @@ gem 'rails_admin'
 gem 'cancan'
 
 gem 'piggybak'
+gem 'protected_attributes'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'

@@ -1,1 +1,18 @@
 <h1>BACCROAD Landing Page</h1>
+
+<%= cart_link %>
+
+<h1>Product Catalog</h1>
+
+<table>
+	<% @products.each do |product| %>
+		<tr>
+			<td><%= link_to product.name, product_path(product) %></td>
+			<td><%= product.piggybak_sellable.description %></td>
+			<td><%= product.piggybak_sellable.price %></td>
+		</tr>
+	<% end %>
+	<% if @products.size == 0 %>
+		<em>No Products Found</em>
+	<% end %>
+</table>

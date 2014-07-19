@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
   #mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   #get 'home/index'
-
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  mount Piggybak::Engine => '/checkout', :as => 'piggybak'
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'home#index'
+  get '/product/:id' => 'product#show', as: :product
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

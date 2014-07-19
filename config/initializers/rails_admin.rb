@@ -19,11 +19,12 @@ RailsAdmin.config do |config|
   config.model Product do
     list do
       field :name
-      field :description
+      #field :description
+      include_all_fields
     end
     edit do
       field :name
-      field :description
+      #field :description
       field :piggybak_sellable
     end
   end
