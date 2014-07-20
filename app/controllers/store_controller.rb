@@ -1,4 +1,4 @@
-class HomeController < ApplicationController
+class StoreController < ApplicationController
   
   before_action :get_products, only: :index
 
