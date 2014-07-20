@@ -296,7 +296,7 @@ config.model Product do
 ```
 
 
-You actually have to mount piggybak.  This may be common sense to experienced rails developers, but it took me a few hours to figure out why the tags like 'add_cart' weren't working.  Add the following ot *routes.rb*
+You actually have to mount the piggybak engine.  This may be common sense to experienced rails developers, but it took me a few hours to figure out why the tags like 'add_cart' weren't working.  Add the following ot *routes.rb*
 
 ```ruby
 mount Piggybak::Engine => '/checkout', :as => 'piggybak'

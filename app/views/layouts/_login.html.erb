@@ -3,5 +3,5 @@
     <%= link_to "Logout", main_app.destroy_user_session_path, method: :delete %>
     | <%= link_to "Admin", '/admin' %>
 <% else %>
-    <%= link_to "Login", main_app.new_user_session_path %> | <%= link_to "Sign up now!", main_app.new_user_registration_path %>
+    <%= link_to "Login", main_app.new_user_session_path %> | <%= link_to "Sign up", main_app.new_user_registration_path %>
 <% end %>
