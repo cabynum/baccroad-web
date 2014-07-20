@@ -1,0 +1,98 @@
+// ==========================================================
+// 	- Description : Theme Global Variables
+// 	- Author      : Rahisi Themes
+// 	- Theme       : Deluxer
+// ==========================================================
+
+
+// ASSETS SETUP
+// ==========================================================
+
+$asset-path: '../';
+
+// FONT SETUP
+// ==========================================================
+
+@import url($asset-path + "fonts/font-awesome/font-awesome.css");
+@import url($asset-path + "fonts/open-sans/open-sans.css");
+
+// TYPOGRAPHY VARIABLES
+// ==========================================================
+
+$text-font:'Open Sans Web';
+$title-font: 'Open Sans Web';
+$title-font-2:'Open Sans Web';
+$title-font-3: 'Open Sans Web';
+
+// font weights
+$normal: normal;
+$bold: bold;
+$semibold: 600;
+$bolder: 800;
+$light: 300;
+
+$icon-font: 'FontAwesome';
+$font-size: 13px;
+$line-height : $font-size * 1.6;
+$margin: $line-height;
+$pad : $margin;
+
+
+// NAVIGATION VARIABLES
+// ==========================================================
+
+$nav-h : 85px; // absolute height of the navigation bar.
+$nav-link-h : $nav-h; // absolute height of navigation links.
+$nav-link-pad-x : 20px; // horizontal padding of nav links.
+$nav-link-margin-y: floor(($nav-h - $nav-link-h) / 2); // vertical margin used for centering. Equals 0 if link height = navigation height.
+
+$navbrand-h: 34px; //brand height
+$navbrand-pad-x: 15px; // horizontal padding
+$navbrand-pad-y: floor(($nav-h - $navbrand-h) / 2); // vertical padding used for centering
+$navbrand-font-size: floor($navbrand-h * 0.75); // brand font size
+
+$nav-toggle-h: floor($nav-h * 0.4); // height of navigation toggle
+$nav-toggle-margin-y: floor(($nav-h - $nav-toggle-h) / 2);// vertical margin used for centering.
+
+$nav-btn-h: 34px; // navigation button height
+$nav-btn-pad-x: 17px;// horizontal padding
+$nav-btn-margin-y: floor(($nav-h - $nav-btn-h) / 2); // vertical margin used for centering.
+$nav-btn-margin-x: $nav-link-pad-x; // horizontal margin used for spacing.
+$nav-top-line-h: 4px; // height of navigation's decorative top line.
+
+$nav-form-h : $nav-btn-h; // height of navigation form elements.
+$nav-form-margin-y: $nav-btn-margin-y; // vertical margin used for centering.
+$nav-form-margin-x: $nav-btn-margin-x; // horizontal margin used for spacing.
+
+$topbar-h: 40px; // top bar height
+$topbar-link-h: $topbar-h; // top bar link height
+
+// LAYOUT VARIABLES
+// ==========================================================
+
+$boxed-pad-x: 40px; // side padding for boxed layout. Used to calculate the boxed wrapper width.
+$boxed-total-pad-x: $boxed-pad-x * 2; // total padding.
+$bs-pad-x: 15px; // bootstrap horizontal container padding
+$bs-total-pad-x: $bs-pad-x *2; // total padding;
+$is-boxed: true; // boxed layout true/false
+$header-fixed: false; // fixed or static header.
+$header-h: $nav-h; // absolute height of the header. Equals navigation height in this theme.
+$cont-pad: 70px; // content padding.
+$intro-pad-t: 120px; // intro padding.
+$intro-pad-b: 120px; // intro padding.
+$page-title-pad-y: 100px;
+$footer-pad: 60px; // footer padding.
+
+/* BACKGROUND IMAGES
+------------------------------------------------------ */
+
+%bg-cover {
+  @include vendorize(background-size, "cover!important");
+}
+
+$page-bg: $asset-path + "images/backgrounds/pagebg.jpg"; // page background image.
+.page-bg {background:url($page-bg) no-repeat center 0 fixed; @extend %bg-cover; }
+
+
+
+

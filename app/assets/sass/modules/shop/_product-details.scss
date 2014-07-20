@@ -1,0 +1,145 @@
+/* PRODUCT DETAILS
+------------------------------------------------- */
+
+#product-details { 
+  
+  margin-bottom: 30px;
+  .main-image {
+    float: right;
+    width: 80%;
+    
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  .additional-images {
+    @include no-list();
+    width: 17%;
+    float: left;
+    
+    li {
+      margin-bottom: 20px;
+ 
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+  
+  .product-info {
+  
+    .title { margin: 0 }
+    
+    .price-box {
+      border: 2px solid #eee;
+      padding: 15px 10px;
+      
+      .price {
+        color: $color-1;
+        font-size: 20px;
+        line-height: 20px;
+        font-weight: 600;
+        margin: 0;
+        float: left;
+      }
+      
+      span {
+        float: right;
+        line-height: 20px;
+      }
+
+    }
+    
+    .review-box {
+      padding: 20px 0;
+      text-align: right;
+      
+      .rating {
+        float: left;
+        margin-right: 10px;
+        
+        .fa {
+          font-size:15px;
+        }
+      }
+      
+      span {
+        display: inline-block;
+        line-height: 15px;
+      }
+      
+    } 
+
+    .attributes-box { 
+      padding: 20px 0;
+      
+      strong { margin-right: 10px }  
+    }
+  
+    .options-box { 
+      padding: 0;
+      
+      select {
+        display: block;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        padding: 10px;
+        width: 100%;
+      }
+    }
+
+    .buy-box {
+
+      input {
+        display: inline-block;
+        border: 1px solid #ddd;
+        width: 50px;
+        text-align: center;
+        height: 35px;
+      }
+      
+      span {
+        display: inline-block;
+        line-height: 35px;
+        margin-right: 10px;
+      }
+      
+      .btn {
+        margin-right: 10px;
+        padding: 0 20px;
+        line-height: 45px;
+        font-size: 15px;
+        font-family: $title-font;
+      }
+    }
+
+    .product-nav-tabs > li > a {
+      color: #333;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+  }
+ 
+}
+
+
+
+
+/* RATINGS
+-------------------------------------------------- */
+
+.rating {
+
+  .fa {
+    color: lighten($color-1, 10%);
+    
+    &.disabled {
+      color: tint(#000, 90%);
+    }
+  }
+
+}

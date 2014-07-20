@@ -1,0 +1,42 @@
+/* ACCOUNT FORMS
+------------------------------------------------- */
+
+.form-block {
+  border: 1px solid #ddd;
+  
+  .col{
+    padding: 60px 40px;
+    width: 50%;
+  }
+  .col.pull-right {
+    border-left: 1px solid #ddd;
+  }
+
+  h4 { 
+    margin:0 0 25px 0;
+    > .fa {
+      color: #ccc;
+      margin:0 10px 0 0;
+    }
+  }
+
+  .form-control, .checkbox {margin-bottom:20px}
+  
+  .btn { padding-left:20px; padding-right:20px}
+  
+  @media (max-width:767px) {
+  
+    .col {
+      float:none!important;
+      width:100%;
+      
+      &.pull-right { border: none; }
+      
+      &.pull-left { border-bottom: 1px solid #ddd; }
+    }
+    }
+}
+
+
+
+

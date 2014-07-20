@@ -1,0 +1,71 @@
+/* RECIPES
+-------------------------------------------------- */
+
+.u-case { text-transform:uppercase}
+.l-case { text-transform:lowercase}
+.c-case { text-transform:capitalize}
+.italic { font-style: italic}
+.align-center { text-align: center}
+.align-left { text-align: left}
+.align-right { text-align: right}
+.no-margin {margin:0!important}
+.no-margin-x {margin-left:0!important;margin-right:0!important}
+.no-margin-y {margin-top:0!important;margin-bottom:0!important}
+.no-margin-b {margin-bottom:0!important}
+.no-margin-t {margin-top:0!important}
+.space-b { margin-bottom:30px}
+.no-pad {padding:0!important}
+.no-pad-t {padding-bottom:0!important}
+.no-pad-b {padding-top:0!important}
+.width-100pc {width:100%;}
+.width-90pc {width:90%;}
+.width-95pc {width:95%;}
+.width-80pc {width:80%;}
+.width-50pc {width:50%;}
+.clear{clear:both!important;visibility: hidden;display: block; height:0}
+.clearfix:before, .clearfix:after { content: '\0020';display: block;overflow: hidden;visibility: hidden;height:0}
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+.v-center { 
+  display: table;
+  height: 100%;
+  width: 100%;
+  
+  .center {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+@media (max-width:767px) {
+  .block-xs { display:block}
+  .no-float-xs {float:none!important}
+  .space-b-xs { margin-bottom: 30px}
+  .space-t-xs { margin-top: 30px}
+  .space-y-xs { margin-top: 15px; margin-bottom: 15px}
+}
+
+/* TRANSITIONS
+-------------------------------------------------- */
+
+.ts-1 ,.tts-1 .tts-1-target{
+	@include vendorize(transition, all 1s ease);
+}
+
+.ts-1:hover, .tts-1:hover .tts-1-target {
+	@include vendorize(transform, "scale(1.1) rotate(360deg)");
+}
+
+.ts-fadein ,.tts-fadein  .tts-fadein-target{
+	@include vendorize(transition, all 1s ease);
+	@include vendorize(opacity, 0);
+}
+
+.ts-fadein:hover, .tts-fadein:hover .tts-fadein-target {
+	@include vendorize(opacity, 1);
+}
+
+
+
+

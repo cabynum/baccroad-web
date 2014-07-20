@@ -1,0 +1,92 @@
+
+/* DEMO STYLES
+-------------------------------------------------- */
+
+#page-wrapper.wide {
+  max-width: 100%!important;
+  
+  #header {
+    width:100%!important;
+  }
+  
+
+}
+
+
+#page-wrapper.boxed {
+
+
+  @media (min-width: 768px) {
+  
+    $cont-max : 750px;
+    $boxed-w: ($cont-max - $bs-total-pad-x) + $boxed-total-pad-x;
+    max-width: $boxed-w;
+    
+    #header { width: $boxed-w; }
+    
+    .container {
+      max-width: $cont-max!important;
+      width:auto!important;
+    }
+  }
+  @media (min-width: 992px) {
+  
+    $cont-max : 970px;
+    $boxed-w: ($cont-max - $bs-total-pad-x) + $boxed-total-pad-x;
+    max-width: $boxed-w;
+    
+    #header { width: $boxed-w; }
+    
+    .container {
+      max-width: $cont-max!important;
+      width:auto!important;
+    }
+  }
+  @media (min-width: 1200px) {
+    
+    $cont-max : 1170px;
+    $boxed-w: ($cont-max - $bs-total-pad-x) + $boxed-total-pad-x;
+    max-width: $boxed-w;
+    
+    #header { width: $boxed-w; }
+    
+    .container {
+      max-width: $cont-max!important;
+      width:auto!important;
+    }
+  }
+
+}
+
+
+
+
+.demo-icons {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+.demo-icons li {
+    display: block;
+    float: left;
+    margin: 0 2.6% 2.6% 0;
+    text-align: center;
+    width: 12%;
+	@include vendorize(box-sizing, content-box);
+}
+.demo-icons li:nth-child(7n) { margin-right: 0 }
+
+.demo-icons li .wrapper {
+    border: 1px solid #DDDDDD;
+    padding: 15px 0;
+    text-align: center;
+}
+.demo-icons li i {
+    display: inline-block;
+    font-size: 32px;
+    margin: 0 3px 0 0;
+    vertical-align: middle;
+    width: 30px;
+}
+
+.demo-btns .btn { margin: 5px 5px 5px 0 }

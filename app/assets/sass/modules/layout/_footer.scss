@@ -1,0 +1,292 @@
+/* FOOTER
+-------------------------------------------------- */
+
+#footer {
+  background: darken($color-2, 5%);
+  display: block;
+  margin:0;
+  padding:0;
+  line-height: 1;
+
+  
+  .line-title {
+    color: #fff;
+    text-transform: uppercase;
+  }
+  
+  .top {
+      padding-top: 60px;
+      min-height: 330px;
+      color: rgba(#fff, 0.5);
+      font-size:12px;
+      
+      h5 {
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        margin: 0 0 20px 0;
+        display:block;
+        padding-bottom:15px;
+        position: relative;
+        text-transform:uppercase;
+        color:#fff;
+    
+      &:after {
+        content: "";
+        height:1px;
+        background: $color-1;
+        position: absolute;
+        bottom:-1px;
+        left:0;
+        width:60px;
+      }
+    }
+  }
+
+
+  .bottom {
+    height: 60px;
+    background: rgba(#000, 0.1);
+    border-top: 1px solid rgba(#fff, 0.1);
+    
+    .copy-text {
+      line-height: 59px;
+      color: rgba(#fff, 0.4);
+      font-size: 11px;
+      float: left;
+      
+      a { 
+        color:rgba(#fff, 0.7);
+        &:hover { color: #fff}
+      }
+    }
+    
+    .social-buttons {
+      float:right;
+      margin-top: floor((60px - 35 ) / 2);
+      
+      .fa {
+        opacity: 0.6;
+        
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  
+  .newsletter-signup{
+    
+    .form-control { 
+      border: none; 
+      font-size: 12px;
+      line-height: 30px;
+      height: 30px;
+    }
+    
+    .btn {
+      padding: 0 12px;
+      line-height: 30px;
+      height: 30px;
+      font-size: 12px;
+    }
+  
+  }
+  
+  .links {
+      @include no-list();
+      
+      li {
+        
+        line-height: 2em;
+        
+        a {
+          color: rgba(#fff, 0.5);
+          display:block;
+          
+          &:hover {
+            color: #fff;
+          }
+        }
+      }
+      
+      &.underline {
+      
+        li {
+          line-height: 2.5em;
+          border-bottom: 1px solid rgba(#fff, 0.05);
+
+          a {
+            border-bottom: 1px solid rgba(#000, 0.1);
+          }
+          
+                  
+          &:last-child, &:last-child a {
+            border: none;
+          }
+          
+        }
+      }
+
+  }
+  
+  @media (max-width:991px) {
+  
+    .top {
+      font-size: 11px;
+    }
+  }
+  
+  @media (max-width:767px) {
+  
+    .top {
+      font-size: 11px;
+      min-height: 0;
+      padding: 40px 0;
+      
+      .row {
+      
+        .col-md-3 {
+          margin: 15px 0;
+        }
+        
+        .col-md-3:nth-child(1), .col-md-3:nth-child(2){
+          display: none;
+        }
+      }
+      
+
+      
+    }
+    
+    .bottom {
+      height: auto;
+      padding: 10px 0;
+      text-align: center;
+      
+      .copy-text {
+        float: none;
+        line-height: 1;
+        padding: 20px 0;
+        margin-top: 15px;
+        width: 100%;
+        border-top: 1px solid rgba(#fff, 0.05);
+        display: block;
+      }
+      
+      .social-buttons {
+        float: none;
+      }
+    }
+  }
+}
+
+
+/* FOOTER FLICKR STREAM
+-------------------------------------------------- */
+#footer {
+
+  .photo-stream {
+  
+    @include no-list();
+    
+    > li {
+    
+      background: rgba(#000, 0.2);
+      height: 30%;
+      width: 30%;
+      display:block;
+      float:left;
+      margin: 0 5% 5% 0;
+      opacity: 0.8;
+      
+      &:nth-child(3n) {
+        margin-right: 0
+      }
+      
+      img {
+        padding: 6px;
+        width:100%;
+        height: auto;
+      }
+      
+      &:hover {
+        opacity:1;
+      }
+    }
+  }
+}
+
+
+/* FOOTER TWEETS
+-------------------------------------------------- */
+
+ul.tweetList {
+
+    @include no-list();
+    line-height: 1;
+    
+    > li > p {
+      display: block;
+      margin-bottom: 15px;
+      background: rgba(#fff, 0.05);
+      padding:15px;
+      position:relative;
+      font-size: 11px;
+      
+      &:after {
+        content: "";
+        @include arrow(down, 15px, 10px, rgba(#fff, 0.05));
+        position: absolute;
+        bottom: -10px;
+        left:30px;
+      }
+      
+          
+      @media (max-width:991px) {
+        font-size: 10px;
+        padding: 10px;
+      }  
+    }
+    
+    a {
+      color: #fff;
+    }
+    
+    .timestamp {
+      margin: 0;
+    }
+    
+    .fa {
+      font-size:30px;
+      display: block;
+      color: rgba(255,255,255,0.5);
+    }
+
+}
+
+/* FOOTER PAYMENTS
+-------------------------------------------------- */
+
+#footer {
+
+  .payment-methods {
+    @include no-list();
+    
+    > li {
+      display: block;
+      float: left;
+      line-height: 1;
+      margin: 0 4% 4% 0;
+      width: 22%;
+      
+      &:nth-child(4n) {
+        margin-right: 0;
+      }
+      
+      > img {
+        display: block;
+        max-width: 100%;
+      }
+    }
+  }
+
+}

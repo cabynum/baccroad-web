@@ -1,0 +1,155 @@
+/* TEXT SLIDER
+-------------------------------------------------- */
+
+.text-slider {
+
+	text-align: center;
+	
+  .slide {
+    
+    padding:15px 0;
+  
+    h2 {
+      color: #fff;
+      font-size: 40px;
+      font-weight: $normal;
+      margin:0;
+      text-transform:capitalize;
+    }
+  }
+  
+  .btn { 
+		padding: 15px 0;
+    min-width: 200px;
+    margin:5px;
+    @include vendorize(box-shadow, "0 2px 0 -1px rgba(0, 0, 0, 0.2)");
+  }
+  
+  .meta {
+    color: #fff;
+    margin:15px 0 20px 0;
+    text-transform: capitalize;
+    font-size: 17px;
+    font-weight: $light;
+    display: inline-block;
+    position: relative;
+    padding:0 20px 0 20px;
+    
+    &:before {
+      content:"\201C";
+      font:bold 30px Arial;
+      position: absolute;
+      left:0;
+      top: 0;
+    }
+    
+    &:after {
+      content:"\201D";
+      font:bold 30px Arial;
+      position: absolute;
+      right:0;
+      top: 0;
+    }
+  }
+  
+
+  @media (max-width: 991px) {
+  
+    .slide {
+      h2 {
+        font-size: 34px;
+        
+      }
+      
+    }
+    
+    .meta {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+  
+    .slide {
+      h2 {
+        font-size: 25px;
+      }
+      
+    }
+    
+    .meta {
+      font-size: 14px;
+    }
+  }
+ 
+
+  
+}
+
+.text-slider.no-js {
+
+  .slide {
+    padding:15px 0;
+  }
+	li:nth-child(n + 2) {
+    display:none;
+  }
+}
+
+.text-slider .bx-wrapper {
+
+  height: auto;
+	margin: 0;
+  
+  .bx-pager, .bx-controls-auto { 
+		text-align: center; 
+    position: static;
+    line-height:1;
+    padding:0;
+    margin:5px 0 0 0;
+	}
+  
+  .bx-pager.bx-default-pager a {
+    background: none;
+		margin:0;
+    border-radius: 0;
+    height: 15px;
+    width:40px;
+    line-height:1;
+    display:inline-block;
+    position:relative;
+    
+    &:after {
+      content:"";
+      display:block;
+      position: absolute;
+      top:0;
+      bottom:0;
+      height: 1px;
+      width:100%;
+      margin:auto;
+      background: #fff;
+    }
+	}
+	
+	.bx-pager.bx-default-pager a:hover {
+		&:after {
+      background: rgba(#fff, 0.6);
+    }
+	}
+	
+	.bx-pager.bx-default-pager a.active {
+    		&:after {
+      background: $color-1;
+      height:2px;
+      
+    }
+	}
+
+}
+
+
+
+
+
+

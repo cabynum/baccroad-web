@@ -1,0 +1,160 @@
+/* TESTIMONIALS
+-------------------------------------------------- */
+
+$quote-bg: tint(#000, 95%);
+$quote-color: #888;
+
+.testimonial {
+
+	.avatar {
+		width: 16%;
+		float: left;
+		
+		img {
+		
+			width: 100%;
+			margin: 10px 0 0 0;
+			@include vendorize(border-radius, "50%");
+		
+		}
+	}
+	
+	.quote-box {
+	
+		width: 76%;
+		float: right;
+		padding: 0;
+		
+		.author {
+			margin: 15px 0 0 0;
+			font: $light 14px $title-font-2;
+      color: $quote-color;
+			
+			strong { 
+				margin-right:5px;
+        font-weight: $semibold;
+			}
+		}
+		
+		.quote {
+		
+			margin: 0;
+			background: $quote-bg;
+			width: 100%;
+			border: 0;
+			padding: 30px 20px;
+			line-height: 1.7em;
+			display: block;
+			color: #888;
+			font-size: 14px;
+      font-style: italic;
+      font-weight: $light;
+			line-height: 1.6em;
+			position: relative;
+		
+			.arrow {
+				width: 0;
+				height: 0;
+				background: none;
+				@include arrow(left, 16px, 20px, $quote-bg);
+				position:absolute;
+				top: 40%;
+				left: -16px;
+			}
+			
+		}
+	}
+	
+}
+
+.testimonial.right, .slider-mode li:nth-child(2n) .testimonial{
+
+  .quote-box { float: left }
+  .quote-box .author { 
+    text-align: right;
+    color: $quote-color;
+  }
+  .avatar { float: right }
+   
+  .quote { 
+    color:$quote-color;
+    background: $quote-bg;
+  } 
+  .quote .arrow {
+    left: auto;
+    right: -16px;
+    border: none;
+    @include arrow(right, 16px, 20px, $quote-bg);
+  }
+}
+
+/* TESTIMONIALS DARK-BG VERSION
+-------------------------------------------------- */
+
+$quote-bg: rgba(#fff, 0.2);
+$quote-color: #fff;
+
+.testimonial.dark-bg, .slider-mode.dark-bg .testimonial {
+
+  .author { color: $quote-color}
+  
+  .quote {
+    color: $quote-color;
+    background: $quote-bg;
+  
+    .arrow {
+      @include arrow(left, 16px, 20px, $quote-bg);
+    }
+    
+  }
+
+}
+
+.testimonial.right.dark-bg, .slider-mode.dark-bg li:nth-child(2n) .testimonial{
+
+  .quote-box .author { 
+    color: $quote-color;
+  }
+   
+  .quote { 
+    color:$quote-color;
+    background: $quote-bg;
+  } 
+  .quote .arrow {
+    @include arrow(right, 16px, 20px, $quote-bg);
+  }
+}
+
+/* TESTIMONIALS SLIDER
+-------------------------------------------------- */
+
+.testimonial-slider.no-js {
+
+  li {
+    float:left;
+    width:48%;
+    margin-right:4%;
+    
+    &:nth-child(2n) {
+      margin-right:0;
+    }
+    
+    &:nth-child(n + 3) {
+      display: none;
+    }
+    
+  } 
+
+}
+
+.testimonial-slider  {
+
+	.bx-wrapper .bx-controls-direction{
+	
+		top: auto;
+		bottom: auto;
+		position: static;
+		margin-top: 20px;
+		
+	}
+}

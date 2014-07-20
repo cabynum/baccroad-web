@@ -1,0 +1,87 @@
+/* ERROR PAGES
+-------------------------------------------------- */
+
+.error-info {
+  color: #fff;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.1);
+  padding: 40px;
+    
+  .pull-left, .pull-right {  width: 50% }
+  
+  .pull-left {
+    text-align: right;
+    padding: 0 30px 0 0;
+  }
+  
+  .pull-right {
+    padding: 30px 0 30px 30px;
+    border-left: 1px solid rgba(255,255,255,0.2);
+    @include vendorize(box-shadow, "-1px 0 0 0 rgba(0,0,0,0.1)");
+  }
+    
+  h4 {
+    color: #fff;
+    text-transform: uppercase;
+    margin: 0 0 15px 0;
+  }
+
+  h1 {
+    font-size: 170px;
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+    font-weight: 600;
+    line-height:1;
+  }
+  
+  
+  p {
+    margin: 0 0 30px 0;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .btn {
+    padding: 13px 0;
+    width: 48%;
+    text-align: center;
+  }
+  
+  @media (max-width: 991px) {
+  
+    h1 {
+      font-size: 150px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+  
+    div.pull-left, div.pull-right {
+      float: none;
+      width:100%;
+      margin: 15px 0;
+      padding: 0;
+      border: none;
+      box-shadow: none;
+      text-align: center;
+    }
+    h1 {
+      font-size: 80px;
+      margin:0;
+    }
+    
+    .btn {
+      font-size: 11px;
+      padding: 10px 0;
+    }
+  }
+  
+}
+
+
+
+
+
+
+
+

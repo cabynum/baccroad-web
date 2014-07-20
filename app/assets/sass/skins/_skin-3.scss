@@ -1,0 +1,31 @@
+// DEFINE COLORS (change these values only!)
+// ------------------------------------------------------
+
+$color-1: #D9534F;
+$color-2: #3C3A5B;
+$text-color: #888;
+$title-color: $color-2;
+$link-color: $color-2;
+$link-hover-color: $color-1;
+
+/* SKIN COLOR CLASSES 
+------------------------------------------------------ */
+
+$colors: $color-1, $color-2;
+
+@for $i from 1 through length($colors) {
+
+	.color-#{$i} {
+		color: nth($colors, $i);
+	}
+	
+	.color-#{$i}-bg {
+		background-color: nth($colors, $i);
+	}
+	
+	.color-#{$i}-lighter-20pc {
+		background-color: lighten(nth($colors, $i), 20%);
+	}
+
+}
+

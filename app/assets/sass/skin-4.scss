@@ -1,0 +1,81 @@
+// ==========================================================
+// 	- Description : Compiles all required stylesheets
+// 	- Author      : Rahisi Themes
+// 	- Theme       : Deluxer
+// 	- Version     : 1.2
+// ==========================================================
+
+
+/* ========================================================== 
+   INITIALIZE
+=============================================================*/
+
+@import "libs/custom";
+@import "variables";
+@import "skins/skin-4";
+@import "recipes";
+@import "bs-theme";
+@import "typography";
+
+/* ========================================================== 
+   LAYOUT MODULES
+=============================================================*/
+@import "modules/layout/content";
+@import "modules/layout/header";
+@import "modules/layout/footer";
+@import "modules/layout/boxed";
+
+/* ========================================================== 
+   COMMON MODULES
+=============================================================*/
+@import "modules/common/social-buttons";
+@import "modules/common/contact";
+@import "modules/common/search";
+@import "modules/common/errors";
+
+/* ========================================================== 
+   BUSINESS MODULES
+=============================================================*/
+@import "modules/business/services";
+@import "modules/business/price-plans";
+@import "modules/business/testimonials";
+@import "modules/business/team";
+
+/* ========================================================== 
+   SHOP MODULES
+=============================================================*/
+@import "modules/shop/product";
+@import "modules/shop/product-details";
+@import "modules/shop/product-grid";
+@import "modules/shop/cart";
+
+/* ========================================================== 
+   BLOG MODULES
+=============================================================*/
+@import "modules/blog/posts";
+@import "modules/blog/comments";
+
+
+/* ========================================================== 
+   PORTFOLIO MODULES
+=============================================================*/
+@import "modules/portfolio/projects";
+
+/* ========================================================== 
+   SLIDERS
+=============================================================*/
+@import "modules/sliders/bxslider-theme";
+@import "modules/sliders/text-slider";
+
+
+/* ========================================================== 
+   ACCOUNT
+=============================================================*/
+@import "modules/account/forms";
+
+
+/* ========================================================== 
+   MISC
+=============================================================*/
+@import "modules/misc/style-switcher";
+@import "modules/misc/demo-styles";

@@ -1,0 +1,72 @@
+/* BXSLIDER THEME
+-------------------------------------------------- */
+	
+.bx-wrapper {
+
+	.bx-pager.bx-default-pager a {
+	
+		background: tint($color-2, 70%);
+		@include vendorize(border-radius, 50%);
+    @include vendorize(box-sizing, border-box);
+		
+		&:hover, &:active {
+			background: $color-1;
+		}
+	}
+	
+	.bx-controls-direction a{ 
+	
+		color: #fff;
+		border: none;
+		
+		&.bx-next { 
+		
+			background: tint($color-2, 20%);
+			
+			&:hover { 
+				background: $color-2;
+			}
+		}
+		&.bx-prev { 
+		
+			background: $color-1; margin-left: 5px;
+			
+			&:hover { 
+				background: darken($color-1, 10%);
+			}
+		}
+	
+	}
+
+}
+
+.dark-bg .bx-wrapper {
+
+	.bx-pager.bx-default-pager a {
+		background: #fff;
+		&:hover, &:active {
+			background: $color-1;
+		}
+	}
+	
+	.bx-controls-direction a{ 
+	
+		color: #fff;
+		border: none;
+		
+		&.bx-next { 
+		
+			background: rgba(#fff, 0.8);
+      color: $color-2;
+			
+			&:hover { 
+				background: #fff;
+			}
+		}
+  }
+
+}
+
+.no-js .bx-wrapper .bx-loading {
+  display: none;
+}

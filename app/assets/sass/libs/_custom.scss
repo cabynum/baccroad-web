@@ -1,0 +1,106 @@
+
+//* SASS MIXINS
+
+$prefixes: ("-webkit-","-moz-", "-o-", "-ms-", "");
+
+// Short Cuts
+// -------------------------------------------------------------------
+
+@mixin no-list() {
+	list-style:none;
+	padding:0;
+	margin:0;
+}
+
+@mixin round-icon($radius) {
+	display:inline-block;
+	text-align: center;
+	line-height: $radius;
+	width: $radius;
+	@include vendorize(border-radius, "50%");
+}
+
+@mixin square-icon($width) {
+	display:inline-block;
+	text-align: center;
+	line-height: $width;
+	width: $width;
+}
+
+@mixin vendorize($property, $value) { 
+	@each $prefix in $prefixes {
+		#{$prefix}#{$property}: #{$value};
+	}
+}
+
+// Colors
+// -------------------------------------------------------------------
+
+@mixin gradient($property, $value) { 
+	@each $prefix in $prefixes {
+		background-image: #{$prefix}#{$property}#{$value};
+	}
+}
+
+@function tint($color, $pc){
+  @return mix(white, $color, $pc);
+}
+
+@function shade($color, $pc){
+  @return mix(black, $color, $pc);
+}
+
+// Arrows
+// -------------------------------------------------------------------
+@mixin arrow($dir, $w, $h, $color) { 
+
+	display:block;
+	width: 0;
+	height:0;
+	background: none;
+	border: none;
+	
+	@if $dir == 'up' {
+		border-bottom: $h solid $color;
+		border-right: ($w / 2) solid transparent;
+		border-left: ($w / 2) solid transparent;
+	
+	} 
+	@elseif $dir == 'down' {
+		border-top: $h solid $color;
+		border-right: ($w / 2) solid transparent;
+		border-left: ($w / 2) solid transparent;
+	}
+	@elseif $dir == 'right' {
+		border-left: $w solid $color;
+		border-top: ($h / 2) solid transparent;
+		border-bottom: ($h / 2) solid transparent;
+	}
+	@elseif $dir == 'left' {
+		border-right: $w solid $color;
+		border-top: ($h / 2) solid transparent;
+		border-bottom: ($h / 2) solid transparent;
+	}
+	@elseif $dir == 'top-right' {
+		border-right: $w solid $color;
+		border-bottom: $h solid transparent;
+	}
+	@elseif $dir == 'top-left' {
+		border-left: $w solid $color;
+		border-bottom: $h solid transparent;
+	}
+	@elseif $dir == 'bottom-right' {
+		border-right: $w solid $color;
+		border-top: $h solid transparent;
+	}
+	@elseif $dir == 'bottom-left' {
+		border-left: $w solid $color;
+		border-top: $h solid transparent;
+	}
+}
+
+
+
+
+
+

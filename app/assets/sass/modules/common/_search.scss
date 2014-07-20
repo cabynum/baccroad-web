@@ -1,0 +1,100 @@
+/* SEARCH
+---------------------------------------------------*/
+.search {
+  background: none;
+  padding: 0;
+  width: 35px;
+  height: 35px;
+  @include vendorize(transition, "all 1s ease");
+  
+  &.open { 
+    width: 230px;
+    
+    input { display: block }
+  }
+  
+  .wrapper {
+    position: relative;
+    background: none;
+    display: block;
+  }
+
+  input {
+    background: none repeat scroll 0 0 #F7F8F8;
+    border: 0px solid #ddd;
+    color: tint($color-2, 5%);
+    height: 35px;
+    padding: 0 10px 0 35px;
+    width: 100%;
+    display: none;
+    @include vendorize(transition, "all 1s ease");
+    @include vendorize(border-radius, "35px");
+    @include vendorize(box-shadow, "none");
+  }
+  
+  .search-btn {
+    background: none;
+    border: 0;
+    font: 0px/0 a;
+    height: 35px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 35px;
+    z-index: 3;
+    text-align: center;
+    color: tint($color-2, 45%);
+    @include vendorize(border-radius, "50%");
+    
+    &:after {
+      content: "\f002";
+      font-family: $icon-font;
+      font-size: 16px;
+      line-height: 1;
+      right: 1px;
+      text-align: center;
+      z-index: 400;
+    }
+    
+    &:hover { color: #333;}
+    
+  }
+
+  .toggle {
+    background-color: $color-1;
+    color: #fff;
+    border:0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 3;
+    display:inline-block;
+    cursor:pointer;
+    @include round-icon(35px);
+    @include vendorize(transition, "all 1s ease");
+    @include vendorize(border-radius, "50%");
+    
+    &:before {
+      content: "\f002";
+      font-family: $icon-font;
+      font-size: 16px;
+      line-height:1;
+      right: 1px;
+      z-index: 400;
+    }
+    &.open {
+      background: $color-2;
+      color: #fff;
+      &:before {
+        content: "\f00d";
+      }
+      
+    }
+
+  }
+
+}

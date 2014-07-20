@@ -1,0 +1,97 @@
+/* SOCIAL BUTTONS
+---------------------------------------------------*/
+
+$brand-colors: facebook #5371AD, twitter #2AA9E0, google-plus #D34829, rss #EF5C29, linkedin #016597, skype #37C5F5, pinterest #CE2127;
+
+.social-buttons {
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+	
+	li {
+		display:inline-block;
+		margin: 0 6px 0 0;
+	}
+	
+	a { display: block; color:#fff }
+	
+	.fa {
+		font-size: 15px;
+		line-height: 35px;
+		text-align: center;
+		width: 35px;
+		display: block;
+	}
+	
+	.white-outline {
+		.fa { 
+			border:1px solid #fff;
+		}
+	}
+	
+	&.colored-bg {
+	
+		@each $brand in $brand-colors {
+
+			.fa-#{nth($brand, 1)} {
+				background-color: #{nth($brand, 2)};
+			}
+
+		}
+	}
+  
+  &.colored-bg-1 {
+	
+    .fa {
+      background-color: $color-1;
+      color: #fff;
+    }
+	}
+  
+  &.colored-bg-2 {
+	
+    .fa {
+      background-color: tint($color-2, 20%);
+      color: #fff;
+    }
+	}
+	
+  &.colored-bg-on-hover {
+	
+		@each $brand in $brand-colors {
+
+			.fa-#{nth($brand, 1)}:hover {
+				background-color: #{nth($brand, 2)};
+        color: #fff;
+			}
+
+		}
+	}
+  
+  
+	&.colored {
+	
+		@each $brand in $brand-colors {
+
+			.fa-#{nth($brand, 1)} {
+				color: #{nth($brand, 2)};
+        background: tint(#000, 95%);
+			}
+
+		}
+	
+	}
+	
+	&.round {
+		.fa {
+			@include vendorize(border-radius, "50%");
+			@include vendorize(box-sizing, "content-box");
+		}
+	}
+	
+
+}
+
+
+
