@@ -1,8 +1,8 @@
 /* ========================================================== 
    INITIALIZE
 =============================================================*/
-@import url("../fonts/font-awesome/font-awesome.css");
-@import url("../fonts/open-sans/open-sans.css");
+@import url("font-awesome/font-awesome.css");
+@import url("open-sans/open-sans.css");
 /* BACKGROUND IMAGES
 ------------------------------------------------------ */
 .page-bg {
@@ -14,7 +14,7 @@
 }
 
 .page-bg {
-  background: url("../images/backgrounds/pagebg.jpg") no-repeat center 0 fixed;
+  background: url("/assets/backgrounds/pagebg.jpg") no-repeat center 0 fixed;
 }
 
 /* SKIN COLOR CLASSES 

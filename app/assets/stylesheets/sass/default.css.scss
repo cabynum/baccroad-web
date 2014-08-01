@@ -1,7 +1,7 @@
 // ==========================================================
-// 	- Description : Compiles all required stylesheets
-// 	- Author      : Rahisi Themes
-// 	- Theme       : Deluxer
+//    - Description : Compiles all required stylesheets
+//    - Author      : Rahisi Themes
+//    - Theme       : Deluxer
 // ==========================================================
 
 
@@ -9,7 +9,7 @@
    INITIALIZE
 =============================================================*/
 
-@import "libs/custom";
+@import "libs/_custom.scss";
 @import "variables";
 @import "skins/skin-2";
 @import "recipes";
