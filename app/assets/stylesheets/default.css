@@ -1365,6 +1365,7 @@ ul.side-links > li > .toggle-children.open:before {
   position: relative;
   background: #e74c3c;
   min-height: 40px;
+  color: #fff;
 }
 #top-bar .links {
   list-style: none;
@@ -1386,6 +1387,17 @@ ul.side-links > li > .toggle-children.open:before {
   padding: 0 15px;
   text-transform: uppercase;
 }
+
+/* Added to style login links */
+#top-bar .links > li > span > a {
+  color: #fff;
+  display: block;
+  font-size: 11px;
+  line-height: 40px;
+  padding: 0 5px;
+  text-transform: uppercase;
+}
+
 #top-bar .links > li > a > i {
   font-size: 12px;
   line-height: 40px;

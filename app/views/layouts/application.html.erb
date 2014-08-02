@@ -49,6 +49,7 @@
 
             <!-- Left Nav -->
             <ul class="links pull-left hidden-xs">
+              <%= render partial: 'layouts/login' %>
               <li><a href="#"><i class="fa fa-envelope"></i>support@domain.com</a></li>
               <li><a href="#"><i class="fa fa-user"></i>Phone: +1 704 941 1838</a></li>
             </ul>
@@ -79,15 +80,11 @@
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="fa fa-bars fa-lg"></span>
               </button>
-              <%= link_to main_app.root_path, id: "logo" do %>
-              	<i class="fa fa-graduation-cap alt-color"></i>
-  				BACCROAD
-			  <% end %>
-			  <%= render partial: 'layouts/login' %>
-			  <p class="notice"><%= notice %></p>
+              <a href="index.html" class="navbar-brand">
+                <i class="fa fa-graduation-cap alt-color"></i>BACCROAD<span class="color-1"> Apparel</span>
+              </a>
+              <p class="notice"><%= notice %></p>
 			  <p class="alert"><%= alert %></p>
-			  <%= yield %>
-
             </div>
             <!-- /header-->
             
@@ -219,6 +216,8 @@
         <!-- Container -->
         <div class="container">
         
+          <%= yield %>
+          <br/>
 
           
           <!-- Portfolio Slider -->
