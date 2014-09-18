@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 gem 'devise'
-gem 'rails_admin'
+gem 'rails_admin', :git => "git://github.com/sferik/rails_admin.git"
 gem 'cancan'
 
 gem 'piggybak'
