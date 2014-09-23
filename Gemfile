@@ -3,7 +3,7 @@ gem 'devise'
 gem 'rails_admin', :git => "git://github.com/sferik/rails_admin.git"
 gem 'cancan'
 
-gem 'piggybak'
+gem "piggybak", "0.7.5"
 gem 'protected_attributes'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
